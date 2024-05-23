@@ -178,23 +178,8 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We introduce a novel task within the field of 3D dance generation, termed dance
-accompaniment, which necessitates the generation of responsive movements from
-a dance partner, the "follower", synchronized with the lead dancer's movements
-and the underlying musical rhythm. Unlike existing solo or group dance generation
-tasks, a duet dance scenario entails a heightened degree of interaction between the
-two participants, requiring delicate coordination in both pose and position. To sup-
-port this task, we first build a large-scale and diverse duet interactive dance dataset,
-DD100, by recording about 117 minutes of professional dancers' performances.
-To address the challenges inherent in this task, we propose a GPT-based model,
-Duolando, which autoregressively predicts the subsequent tokenized motion condi-
-tioned on the coordinated information of the music, the leader's and the follower's
-movements. To further enhance the GPT's capabilities of generating stable results
-on unseen conditions (music and leader motions), we devise an off-policy rein-
-forcement learning strategy that allows the model to explore viable trajectories
-from out-of-distribution samplings, guided by human-defined rewards. Based on
-the collected dataset and proposed method, we establish a benchmark with several
-carefully designed metrics.
+            Humans can perform a variety of interactive motion, among which two-person dance is one of the most challenging interactions.   However, in terms of computer motion generation, current work is still unable to generate high-quality interactive actions, especially in the field of double dance.
+  On the one hand, this is caused by the lack of large-scale high-quality data sets, and on the other hand, it is caused by interactive motion generation algorithms.   In order to solve the above challenges, we proposed a large-scale two-person dance data set containing rich styles and whole-body movements, totaling 7.85 hours; we also proposed a new motion representation and an interactive dance generation network based on diffusion model. Experiments demonstrate the effectiveness of our dataset and algorithm.
           </p>
         </div>
       </div>
@@ -353,7 +338,7 @@ carefully designed metrics.
 </section> -->
 
 
-<section class="section" id="BibTeX">
+<!-- <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <pre><code>@inproceedings{siyao2024duolando,
@@ -363,7 +348,7 @@ carefully designed metrics.
   year      = {2024},
 }</code></pre>
   </div>
-</section>
+</section> -->
 
 <a href="https://clustrmaps.com/site/1bw8l" title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=gyNaovoCDCnFAlIcQkc_74fe9iuwCBzj29JNZY0oo08&cl=ffffff"  height="1" width="1"></a>
 <section class='section'>
