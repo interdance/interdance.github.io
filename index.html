@@ -38,9 +38,67 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+  <!-- meta data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Recipe",
+      "name": "InterDance Dataset",
+      "alternateName": ["interDance Dataset", "interdance-dataset"],
+      "description": "This is a 3D human motion generation dataset, comprising 15 types of closely interactive duet dances with a total duration of 3.93 hours. Additionally, the dataset includes background music that corresponds one-to-one with the dances. The dances in the dataset are available in the commonly used SMPLX and joints formats, and we have also included downsampled vertices of the human body surface. Captured using motion capture technology, the dataset features high-quality motions and includes finger movements.",
+      "sameAs": "https://interdance.github.io/",
+      "isAccessibleForFree": True,
+      "license" : "https://creativecommons.org/licenses/by/4.0",
+      "keywords": ["motion generation", "dance generation", "music to dance", "interaction generation", "duet dance"],
+      "distribution.contentUrl": "https://interdance.github.io/",
+      "version": "1.0.0",
+      "temporalCoverage" : "2022/2024",
+      "funder": [
+        {
+          "@type": "Organization",
+          "name": "Shenzhen Key Laboratory of next generation interactive media innovative technology"
+        }
+      ],
+      "creator": [
+        {
+          "@type": "Person",
+          "givenName": "Ronghui",
+          "familyName": "Li",
+          "name": "Ronghui Li"
+        },
+        {
+          "@type": "Person",
+          "givenName": "Youliang",
+          "familyName": "Zhang",
+          "name": "Youliang Zhang"
+        },
+        {
+          "@type": "Organization",
+          "sameAs": "https://www.sigs.tsinghua.edu.cn/",
+          "name": "Tsinghua University"
+        }
+      ],
+    }
+  </script>
+  <style>
+    /* 固定按钮在右上角 */
+    #fixedButton {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        padding: 10px 20px;
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>
+
+
 </head>
 <body>
-
+  <button id="fixedButton">Croissant</button>
 
 <section class="hero">
   <div class="hero-body">
@@ -344,6 +402,42 @@
             </div>
         </td>
   </tr>
+  <tr style="display:table-row">
+    <td>
+        <div>
+    <iframe src="https://www.youtube.com/embed/YPvGQ7CI4qE" title="quick show Urban" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div style="text-align: center; font-size: large;">
+            <span style="font-style:italic">Urban</span>
+        </div>
+    </td>
+    <td>
+        <div>
+    <iframe src="https://www.youtube.com/embed/7zQWR-vecq0" title="quick show Miao" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div style="text-align: center; font-size: large;">
+            <span style="font-style:italic">Miao</span>
+        </div>
+    </td>
+  </tr>
+  <tr style="display:table-row">
+    <td>
+        <div>
+    <iframe src="https://www.youtube.com/embed/llmXD8dIYQ8" title="quick show Samba" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div style="text-align: center; font-size: large;">
+            <span style="font-style:italic">Samba</span>
+        </div>
+    </td>
+    <td>
+        <div>
+    <iframe src="https://www.youtube.com/embed/WX2UjWC0VgQ" title="quick show Samba" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div style="text-align: center; font-size: large;">
+            <span style="font-style:italic">Samba</span>
+        </div>
+    </td>
+  </tr>
 		</table>
         </div>
       </div>
@@ -499,7 +593,11 @@
   </div>
 </footer>
 
-
+<script>
+  document.getElementById('fixedButton').addEventListener('click', function() {
+      window.open('static/croissant.json', '_blank');
+  });
+</script>
 
 
 </body>
