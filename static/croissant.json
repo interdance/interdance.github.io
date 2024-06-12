@@ -55,7 +55,7 @@
       "@id": "interDance-dataset",
       "name": "interDance-dataset",
       "description": "The homepage of interDance.",
-      "contentUrl": "https://drive.google.com/drive/folders/10CAQ_DA9IS87-3phPpiMel9B8UFD-szF?usp=sharing",
+      "contentUrl": "https://interdance.github.io/",
       "encodingFormat": "git+https",
       "sha256": "main"
     },
