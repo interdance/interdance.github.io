@@ -55,7 +55,7 @@
       "@id": "interDance-dataset",
       "name": "interDance-dataset",
       "description": "The homepage of interDance.",
-      "contentUrl": "https://interdance.github.io/",
+      "contentUrl": "https://drive.google.com/drive/folders/10CAQ_DA9IS87-3phPpiMel9B8UFD-szF?usp=sharing",
       "encodingFormat": "git+https",
       "sha256": "main"
     },
@@ -68,7 +68,7 @@
         "@id": "interDance-dataset"
       },
       "encodingFormat": "application/x-npy",
-      "includes": "double_music_35/*.npy"
+      "includes": "musicfea/*.npy"
     },
     {
       "@type": "cr:FileSet",
@@ -85,7 +85,7 @@
       "@type": "cr:FileSet",
       "@id": "leader-files",
       "name": "leader-files",
-      "description": "The motion rep data of the leader dancer (details in our paper).",
+      "description": "The motion rep data of the leader dancer (extracted from smplx data, details in our paper).",
       "containedIn": {
         "@id": "interDance-dataset"
       },
