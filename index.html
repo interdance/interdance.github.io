@@ -38,9 +38,87 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+  <!-- meta data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "name": "InterDance Dataset",
+      "alternateName": ["interDance Dataset", "interdance-dataset"],
+      "description": "This is a 3D human motion generation dataset, comprising 15 types of closely interactive duet dances with a total duration of 3.93 hours. Additionally, the dataset includes background music that corresponds one-to-one with the dances. The dances in the dataset are available in the commonly used SMPLX and joints formats, and we have also included downsampled vertices of the human body surface. Captured using motion capture technology, the dataset features high-quality motions and includes finger movements.",
+      "sameAs": "https://interdance.github.io/",
+      "isAccessibleForFree": True,
+      "license" : "https://creativecommons.org/licenses/by/4.0",
+      "keywords": ["motion generation", "dance generation", "music to dance", "interaction generation", "duet dance"],
+      "distribution.contentUrl": "https://interdance.github.io/",
+      "version": "1.0.0",
+      "temporalCoverage" : "2022/2024",
+      "funder": [
+        {
+          "@type": "Organization",
+          "name": "Shenzhen Key Laboratory of next generation interactive media innovative technology"
+        }
+      ],
+      "creator": [
+        {
+          "@type": "Person",
+          "givenName": "Xiu",
+          "familyName": "Li",
+          "name": "Xiu Li"
+        },
+        {
+          "@type": "Person",
+          "givenName": "Ronghui",
+          "familyName": "Li",
+          "name": "Ronghui Li"
+        },
+        {
+          "@type": "Person",
+          "givenName": "Yachao",
+          "familyName": "Zhang",
+          "name": "Yachao Zhang"
+        },
+        {
+          "@type": "Person",
+          "givenName": "Youliang",
+          "familyName": "Zhang",
+          "name": "Youliang Zhang"
+        },
+        {
+          "@type": "Organization",
+          "sameAs": "https://www.sigs.tsinghua.edu.cn/",
+          "name": "Tsinghua University"
+        }
+      ],
+    }
+  </script>
+  <style>
+    /* 固定按钮在右上角 */
+    #fixedButton {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 10px 20px;
+        background-color: #f0f0f0; /* 浅灰色背景 */
+        color: #333; /* 深灰色文字 */
+        border: 1px solid #ccc; /* 浅灰色边框 */
+        border-radius: 5px;
+        cursor: pointer;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        text-decoration: none;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 轻微阴影 */
+    }
+
+    #fixedButton:hover {
+        background-color: #e0e0e0; /* 更浅的灰色背景 */
+    }
+</style>
+</style>
+
+
 </head>
 <body>
-
+  <button id="fixedButton">Croissant</button>
 
 <section class="hero">
   <div class="hero-body">
@@ -234,20 +312,20 @@
         <h2 class="title is-3">Data Examples (Quick Scan)</h2>
         <div>
         This section showcases in the InteracDance dataset.
-		<!-- <div><a href="./gallery.html" style="color:cornflowerblue;padding:0;border:none;background:none">▶ More Examples on DD100 Gallery</a></div> -->
+		<!-- <div><a href="./gallery.html" style="color:cornflowerblue;padding:0;border:none;background:none">▶ More Examples on InterDance Gallery</a></div> -->
 		<table>
 		    <tr style="display:table-row">
+          <td>
+              <div>
+          <iframe src="https://www.youtube.com/embed/4vYpuA74BHw" title="quick show Rumba" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+              <div style="text-align: center; font-size: large;">
+                  <span style="font-style:italic">Rumba</span>
+              </div>
+          </td>
 		        <td>
 		            <div>
-						<iframe src="https://www.youtube.com/embed/7jOGt92EvZU/" title="quick show Waltz" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-		            </div>
-		            <div style="text-align: center; font-size: large;">
-		                <span style="font-style:italic">Waltz</span>
-		            </div>
-        		</td>
-		        <td>
-		            <div>
-						<iframe src="https://www.youtube.com/embed/8TNQC9sxEeQ" title="quick show Chacha" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+						<iframe src="https://www.youtube.com/embed/qekhfSb5pnI" title="quick show Chacha" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 		            </div>
 		            <div style="text-align: center; font-size: large;">
 		                <span style="font-style:italic">Cha Cha</span>
@@ -255,22 +333,23 @@
         		</td>
 			</tr>
 		    <tr style="display:table-row">
+          <td>
+              <div>
+          <iframe src="https://www.youtube.com/embed/wV8HjR2zPag/" title="quick show Waltz" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+              <div style="text-align: center; font-size: large;">
+                  <span style="font-style:italic">Waltz</span>
+              </div>
+          </td>
 		        <td>
 		            <div>
-						<iframe src="https://www.youtube.com/embed/O8GL_P_1SKs" title="quick show Jazz" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+						<iframe src="https://www.youtube.com/embed/6gVjw98Y-Ak" title="quick show Jazz" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 		            </div>
 		            <div style="text-align: center; font-size: large;">
 		                <span style="font-style:italic">Jazz</span>
 		            </div>
         		</td>
-		        <td>
-		            <div>
-						<iframe src="https://www.youtube.com/embed/4vYpuA74BHw" title="quick show Rumba" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-		            </div>
-		            <div style="text-align: center; font-size: large;">
-		                <span style="font-style:italic">Rumba</span>
-		            </div>
-        		</td>
+            
 			</tr>
 		    <tr style="display:table-row">
 		        <td>
@@ -343,6 +422,42 @@
                 <span style="font-style:italic">Kpop</span>
             </div>
         </td>
+  </tr>
+  <tr style="display:table-row">
+    <td>
+        <div>
+    <iframe src="https://www.youtube.com/embed/ps4upNMSH18" title="quick show Urban" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div style="text-align: center; font-size: large;">
+            <span style="font-style:italic">Urban</span>
+        </div>
+    </td>
+    <td>
+        <div>
+    <iframe src="https://www.youtube.com/embed/_WGpd9hLAwo" title="quick show Miao" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div style="text-align: center; font-size: large;">
+            <span style="font-style:italic">Miao</span>
+        </div>
+    </td>
+  </tr>
+  <tr style="display:table-row">
+    <td>
+        <div>
+    <iframe src="https://www.youtube.com/embed/RHZ_AuWRirY" title="quick show Samba" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div style="text-align: center; font-size: large;">
+            <span style="font-style:italic">Samba</span>
+        </div>
+    </td>
+    <!-- <td>
+        <div>
+    <iframe src="https://www.youtube.com/embed/WX2UjWC0VgQ" title="quick show Samba" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div style="text-align: center; font-size: large;">
+            <span style="font-style:italic">Samba</span>
+        </div>
+    </td> -->
   </tr>
 		</table>
         </div>
@@ -499,7 +614,11 @@
   </div>
 </footer>
 
-
+<script>
+  document.getElementById('fixedButton').addEventListener('click', function() {
+      window.open('static/croissant.json', '_blank');
+  });
+</script>
 
 
 </body>

@@ -1,0 +1,181 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform"
+  },
+  "@type": "sc:Dataset",
+  "name": "InterDance",
+  "description": "This is a 3D human motion generation dataset, comprising 15 types of closely interactive duet dances with a total duration of 3.93 hours. Additionally, the dataset includes background music that corresponds one-to-one with the dances. The dances in the dataset are available in the commonly used SMPLX and joints formats, and we have also included downsampled vertices of the human body surface. Captured using motion capture technology, the dataset features high-quality motions and includes finger movements.",
+  "conformsTo": "http://mlcommons.org/croissant/1.0",
+  "url": "https://interdance.github.io/",
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "interDance-dataset",
+      "name": "interDance-dataset",
+      "description": "The homepage of interDance.",
+      "contentUrl": "https://interdance.github.io/",
+      "encodingFormat": "git+https",
+      "sha256": "main"
+    },
+    {
+      "@type": "cr:FileSet",
+      "@id": "music-files",
+      "name": "music-files",
+      "description": "The background music feature files in our data repository (extracted 35-dim npy features from wav file).",
+      "containedIn": {
+        "@id": "interDance-dataset"
+      },
+      "encodingFormat": "application/x-npy",
+      "includes": "musicfea/*.npy"
+    },
+    {
+      "@type": "cr:FileSet",
+      "@id": "org-music-files",
+      "name": "org-music-files",
+      "description": "The background music files in our data repository (.wav).",
+      "containedIn": {
+        "@id": "interDance-dataset"
+      },
+      "encodingFormat": "audio/wav",
+      "includes": "music/*.wav"
+    },
+    {
+      "@type": "cr:FileSet",
+      "@id": "leader-files",
+      "name": "leader-files",
+      "description": "The motion rep data of the leader dancer (extracted from smplx data, details in our paper).",
+      "containedIn": {
+        "@id": "interDance-dataset"
+      },
+      "encodingFormat": "application/x-npy",
+      "includes": "motion/*_0.npy"
+    },
+    {
+      "@type": "cr:FileSet",
+      "@id": "follower-files",
+      "name": "follower-files",
+      "description": "The motion rep data of the follower dancer.",
+      "containedIn": {
+        "@id": "interDance-dataset"
+      },
+      "encodingFormat": "application/x-npy",
+      "includes": "motion/*_1.npy"
+    },
+    {
+      "@type": "cr:FileSet",
+      "@id": "smplx-files",
+      "name": "smplx-files",
+      "description": "The org smplx files of 99 long duet dances in our data repository.",
+      "containedIn": {
+        "@id": "interDance-dataset"
+      },
+      "encodingFormat": "application/python-pickle",
+      "includes": "smplxdata/*.pkl"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "gene-file",
+      "name": "gene-file",
+      "description": "JSON file that contains the gene class info of all dances.",
+      "containedIn": {
+        "@id": "interDance-dataset"
+      },
+      "encodingFormat": "application/json"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "duet-dance",
+      "name": "duet-dance",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "leader-rep",
+          "name": "leader-rep",
+          "dataType": "sc:Float",
+          "source": {
+            "fileSet": {
+              "@id": "leader-files"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "follower-rep",
+          "name": "follower-rep",
+          "dataType": "sc:Float",
+          "source": {
+            "fileSet": {
+              "@id": "follower-files"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "music-feat",
+          "name": "music-feat",
+          "dataType": "sc:AudioObject",
+          "source": {
+            "fileSet": {
+              "@id": "music-files"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "smplx",
+          "name": "smplx",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "smplx-files"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
